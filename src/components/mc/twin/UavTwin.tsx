@@ -61,7 +61,7 @@ export function UavTwin() {
 
           api.pause();
           api.seekTo(0);
-          setTimeout(() => setReady(true), 1500);
+          setReady(true);
         });
       },
       error: () => {
@@ -70,7 +70,8 @@ export function UavTwin() {
       },
       ui_animations: 0,
       animation_autoplay: 0,
-      ui_controls: 1, // Crucial: Re-enable free 3D orbiting for the user!
+      ui_controls: 1,
+      ui_loading: 0,
       ui_infos: 0,
       ui_watermark: 0,
       ui_annotations: 1,
@@ -82,7 +83,7 @@ export function UavTwin() {
   }, [setFocusHotspot]);
 
   useEffect(() => {
-    const failsafe = setTimeout(() => setReady(true), 5000);
+    const failsafe = setTimeout(() => setReady(true), 60000);
 
     if (document.getElementById("sf-sdk")) {
       if (window.Sketchfab && !apiRef.current) initViewer();
