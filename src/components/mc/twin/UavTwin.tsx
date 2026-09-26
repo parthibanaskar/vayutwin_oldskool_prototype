@@ -70,7 +70,7 @@ export function UavTwin() {
       },
       ui_animations: 0,
       animation_autoplay: 0,
-      ui_controls: 1,
+      ui_controls: 0,
       ui_loading: 0,
       ui_infos: 0,
       ui_watermark: 0,
