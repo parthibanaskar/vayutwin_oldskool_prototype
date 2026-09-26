@@ -79,6 +79,7 @@ interface MissionApi extends MissionState {
   setCursor: (index: number | null) => void;
   setFuelPath: (path: "primary" | "secondary") => void;
   setFocusHotspot: (hotspot: string | null) => void;
+  dispatchWeatherAlert: (alert: any) => void;
   selectAlert: (id: string | null) => void;
   setResolvedAlerts: (fn: (prev: Set<string>) => Set<string>) => void;
   commandSafeLanding: (siteName: string) => void;
@@ -137,6 +138,13 @@ export function MissionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (paused) return;
   }, [alerts, resolvedAlerts, paused]);
+
+  const dispatchWeatherAlert = useCallback((alert) => {
+    setAlerts((prev) => {
+      if (prev.find((a) => a.key === alert.key)) return prev;
+      return [alert, ...prev].slice(0, 60);
+    });
+  }, []);
 
   const log = useCallback((kind: string, payload: Record<string, unknown>) => {
     chainQueue.current = chainQueue.current.then(async () => {
@@ -566,6 +574,7 @@ export function MissionProvider({ children }: { children: ReactNode }) {
     setFuelPath,
     setFocusHotspot,
     selectAlert,
+    dispatchWeatherAlert,
     setResolvedAlerts,
     commandSafeLanding,
     log,
