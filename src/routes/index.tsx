@@ -66,7 +66,7 @@ function TwinPanel() {
         </Chip>
       }
       className="h-[26rem] shrink-0"
-      bodyClassName="min-h-0 flex-1 p-0 relative"
+      bodyClassName="min-h-0 flex-1 p-0 relative overflow-hidden"
     >
       <div className="absolute inset-0">
         <UavTwin />
