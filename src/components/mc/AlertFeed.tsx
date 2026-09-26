@@ -105,13 +105,13 @@ export function AlertFeed({ className }: { className?: string }) {
                       </Chip>
                       <Chip
                         tone={
-                          a.rulMinutes !== null && a.rulMinutes < 12
+                          a.rulMinutes != null && a.rulMinutes < 12
                             ? "crit"
                             : "muted"
                         }
                       >
                         RUL{" "}
-                        {a.rulMinutes === null
+                        {a.rulMinutes == null
                           ? "stable"
                           : `${a.rulMinutes.toFixed(0)} min`}
                       </Chip>

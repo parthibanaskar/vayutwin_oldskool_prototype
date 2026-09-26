@@ -46,6 +46,7 @@ export function WeatherWidget({ lat, lon }: { lat: number; lon: number }) {
               severity: "advisory",
               confidence: 0.9,
               hotspot: "avionics",
+              rulMinutes: null,
               contributions: [],
               narrative: `ENVIRONMENTAL HAZARD: High ${isRaining ? "precipitation" : "wind"} detected in the operational area.\n\n• Location: Drone current coordinates.\n• Hazard: ${isRaining ? "Rain" : "High Winds"}.\n• Hardware Impact: Increased aerodynamic drag and sensor noise.\n• Action Required: Monitor structural icing and battery consumption.`,
               resolutionNarrative: `ACTION EXECUTED: Weather mitigation engaged.\n\n• Hardware Mitigation: Pitot heat activated. Flight controller gain adjusted for turbulent conditions.\n• Outcome: Flight envelope secured.`,

@@ -386,9 +386,10 @@ export class SimulatedTelemetrySource implements TelemetrySource {
         fatigue_crack_m: this.fatigueCrackMeters,
         rul_seconds,
         gpsSpoofed: spoofCheck.spoofed,
-        pitch_deg:
-          Math.cos(this.t * 0.3) * 0.5 +
-          (spoof > 0.1 ? spoof * 25 * Math.sin(this.t * 2.1) : 0),
+        pitch_deg: engineFailed
+          ? -45
+          : Math.cos(this.t * 0.3) * 0.5 +
+            (spoof > 0.1 ? spoof * 25 * Math.sin(this.t * 2.1) : 0),
         roll_deg:
           Math.sin(this.t * 0.5) * 1.5 +
           (spoof > 0.1 ? spoof * 45 * Math.sin(this.t * 1.7) : 0),

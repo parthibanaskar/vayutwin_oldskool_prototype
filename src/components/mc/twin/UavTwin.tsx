@@ -187,7 +187,7 @@ export function UavTwin() {
     >
       <div
         ref={wrapperRef}
-        className="absolute top-[-17.5%] left-[-17.5%] w-[135%] h-[135%] origin-center z-10"
+        className="absolute inset-0 w-full h-full origin-center z-10"
       >
         <iframe
           ref={iframeRef}
