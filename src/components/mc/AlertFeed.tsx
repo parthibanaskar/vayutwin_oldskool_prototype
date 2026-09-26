@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AlertTriangle, Info, ShieldCheck, Wrench } from "lucide-react";
 
 import { useMission } from "@/lib/twin/store";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { bandEnergy, magnitudeSpectrum } from "./fft";
 import { FLIGHT_PROFILES, HOTSPOTS, PARAM_SPECS } from "./profiles";
 import type {

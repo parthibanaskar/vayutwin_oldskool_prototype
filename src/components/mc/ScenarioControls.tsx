@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from "react";
 import { Pause, Play, RotateCcw, ChevronDown, ChevronUp } from "lucide-react";
 

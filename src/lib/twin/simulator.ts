@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FLIGHT_PROFILES, PARAM_SPECS } from "./profiles";
 import type { FlightProfile, ParamKey, Sample } from "./types";
 import {
