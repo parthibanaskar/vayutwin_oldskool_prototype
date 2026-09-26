@@ -74,6 +74,8 @@ export function UavTwin() {
       ui_loading: 0,
       ui_infos: 0,
       ui_watermark: 0,
+      ui_stop: 0,
+      ui_hint: 0,
       ui_annotations: 1,
       autostart: 1,
       preload: 1,
@@ -119,7 +121,7 @@ export function UavTwin() {
       const shakeY = (Math.random() - 0.5) * shakeAmt;
 
       if (wrapperRef.current) {
-        wrapperRef.current.style.transform = `translate(${shakeX}px, ${shakeY}px) rotateZ(${bank}deg) rotateX(${pitch}deg)`;
+        wrapperRef.current.style.transform = `translate(${shakeX}px, ${shakeY}px)`;
       }
     };
 
